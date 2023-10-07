@@ -60,13 +60,18 @@ export default function App() {
         />
         <Text style={styles.text}>Produto 04</Text>
       </View>
+      
       <TouchableOpacity onPress={clickHandler}
         activeOpacity={0.7}
-        style={styles.btAdicionar}>
+        style={styles.btAdicionar4}>
        <Text style={styles.textButton}>Adicionar</Text>
         </TouchableOpacity>
 
     </View>
+
+      <View style={styles.boxFooter}>
+      <Text>©Created by iEduardoD3V🐼</Text>
+      </View>
     </ScrollView>
     
   );
@@ -106,7 +111,7 @@ const styles = StyleSheet.create({
     height: 250,
     borderRadius: 20,
     marginBottom: 10,
-    marginTop: 50
+    marginTop: 35
   },
   btAdicionar:{
     width:150,
@@ -117,13 +122,26 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     fontSize: 20,
     borderRadius:10,
-    marginBottom:5,
-    shadowColor:"#000",
-    borderWidth: 2,
-    borderColor: "#008000"
+  },
+  btAdicionar4:{
+    width:150,
+    height: 35,
+    backgroundColor:"#008000",
+    color: "#008000",
+    textAlign:'center',
+    justifyContent:"center",
+    fontSize: 20,
+    borderRadius:10,
+    marginBottom:50
   },
   textButton:{
     color: "#fff",
     textAlign:'center'
   },
+  boxFooter:{
+    display: 'flex',
+    justifyContent:'center',
+    alignItems: 'center',
+    height:50,
+  }
 });
