@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Alert, ScrollView, SafeAreaView} from 'react-native';
 
 
   const clickHandler = () =>{
@@ -9,6 +9,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, Alert } from 'react-na
 export default function App() {
   return (
     
+    <ScrollView>
     <View style={styles.container}>
       
       <View style={styles.boxProdutos}>
@@ -16,12 +17,13 @@ export default function App() {
           source ={require("./assets/img/produto1.png")}
           style={styles.produtos}
         />
+        
         <Text style={styles.text}>Produto 01</Text>
       </View>
         <TouchableOpacity onPress={clickHandler}
         activeOpacity={0.7}
         style={styles.btAdicionar}>
-        <Text>Adicionar</Text>
+        <Text style={styles.textButton}>Adicionar</Text>
         </TouchableOpacity>
 
       <View style={styles.boxProdutos}>
@@ -35,7 +37,7 @@ export default function App() {
       <TouchableOpacity onPress={clickHandler}
         activeOpacity={0.7}
         style={styles.btAdicionar}>
-        <Text>Adicionar</Text>
+        <Text style={styles.textButton}>Adicionar</Text>
         </TouchableOpacity>
 
       <View style={styles.boxProdutos}>
@@ -48,7 +50,7 @@ export default function App() {
       <TouchableOpacity onPress={clickHandler}
         activeOpacity={0.7}
         style={styles.btAdicionar}>
-        <Text>Adicionar</Text>
+        <Text style={styles.textButton}>Adicionar</Text>
         </TouchableOpacity>
 
       <View style={styles.boxProdutos}>
@@ -61,23 +63,30 @@ export default function App() {
       <TouchableOpacity onPress={clickHandler}
         activeOpacity={0.7}
         style={styles.btAdicionar}>
-        <Text>Adicionar</Text>
+       <Text style={styles.textButton}>Adicionar</Text>
         </TouchableOpacity>
 
     </View>
+    </ScrollView>
+    
   );
+  
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1C1C1C',
+    backgroundColor: 'gray',
     alignItems: 'center',
     justifyContent: 'center',
+    
+
   },
   produtos:{
     width: 200,
     height: 200
+    
   },
   produtos3:{
     width: 190,
@@ -86,7 +95,7 @@ const styles = StyleSheet.create({
   text:{
     textAlign: 'center',
     fontSize: 20,
-    color: "#000"
+    color: "#010101"
   },
   boxProdutos:{
     display:'flex',
@@ -96,12 +105,13 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     borderRadius: 20,
-    marginBottom: 10
+    marginBottom: 10,
+    marginTop: 50
   },
   btAdicionar:{
     width:150,
     height: 35,
-    backgroundColor:"transparent",
+    backgroundColor:"#008000",
     color: "#008000",
     textAlign:'center',
     justifyContent:"center",
@@ -111,5 +121,9 @@ const styles = StyleSheet.create({
     shadowColor:"#000",
     borderWidth: 2,
     borderColor: "#008000"
-  }
+  },
+  textButton:{
+    color: "#fff",
+    textAlign:'center'
+  },
 });
